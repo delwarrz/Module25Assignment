@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Home</h1>
+{% for post in posts %}
+    <div>
+        <p>{{ post.user.username }}</p>
+        <p>{{ post.content }}</p>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="Post Image">
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}
